@@ -13,11 +13,11 @@ class GlidedskyPipeline:
         print("*" * 100)
 
     def process_item(self, item, spider):
-        if item['numbers']:
-            numbers = item['numbers']
+        if item["numbers"]:
+            numbers = item["numbers"]
             self.result += sum(numbers)
             print("次数：{0} 题目：{1}  计算结果: {2}".format(self.count, spider.name, self.result))
             self.count += 1
         else:
-            return DropItem('Missing Number.')
+            return DropItem("Missing Number.")
         return item

@@ -13,13 +13,13 @@ class CssPuzzleOneSpider(scrapy.Spider):
 
     def parse(self, response):
         numbers = []
-        css_label = "".join(response.xpath('//style/text()').extract())
+        css_label = "".join(response.xpath("//style/text()").extract())
         before_dict = dict()
         css_content_label = re.findall(r'\.(.*?):before { content:"(.*?)" }', str(css_label))
         for cont in css_content_label:
             before_dict[cont[0]] = cont[1]
-        css_del_names = re.findall(r'\.(.*?) { margin-right:-1em }', str(css_label))
-        css_left_label = re.findall(r'\.(.*?) { left:(.*?)em }', str(css_label))
+        css_del_names = re.findall(r"\.(.*?) { margin-right:-1em }", str(css_label))
+        css_left_label = re.findall(r"\.(.*?) { left:(.*?)em }", str(css_label))
         count_dict = dict()
         for count in css_left_label:
             count_dict[count[0]] = count[1]
@@ -28,7 +28,7 @@ class CssPuzzleOneSpider(scrapy.Spider):
             class_names = col.xpath("./div/@class").extract()
             values = col.xpath("./div/text()").extract()
             if len(class_names) >= 3:
-                move_num = ['0', '0', '0']
+                move_num = ["0", "0", "0"]
                 index = 0
                 for class_name, value in zip(class_names, values):
                     if class_name not in css_del_names:

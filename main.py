@@ -7,4 +7,7 @@ if __name__ == '__main__':
     # execute(["scrapy", "crawl", "ipblockone"])
     # execute(["scrapy", "crawl", "ipblocktwo"])
     # execute(["scrapy", "crawl", "fontpuzzleone"])
-    execute(["scrapy", "crawl", "csspuzzleone"])
+    # execute(["scrapy", "crawl", "fontpuzzletwo"])
+    # execute(["scrapy", "crawl", "csspuzzleone"])
+    # execute(["scrapy", "crawl", "javascriptobfuscationone"])
+    execute(["scrapy", "crawl", "spriteimageone"])

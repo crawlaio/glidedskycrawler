@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import scrapy
 
 from glidedsky.items import GlidedskyItem
@@ -19,7 +18,7 @@ class IPBlockOneSpider(scrapy.Spider):
             "scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware": None,
             "glidedsky.downloadermiddlewares.httpproxy.RandomProxyMiddleware": 400,
             "glidedsky.downloadermiddlewares.cookies.LoginCookiesMiddleware": 300,
-        }
+        },
     }
 
     start_urls = ["http://glidedsky.com/level/web/crawler-ip-block-1?page={0}".format(one) for one in range(1, 1001)]

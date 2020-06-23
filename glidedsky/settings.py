@@ -60,8 +60,6 @@ RETRY_ENABLED = True
 RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 408, 406, 403, 404, 429]
 RETRY_TIMES = 25
 
-ITEM_PIPELINES = {
-    "glidedsky.pipelines.GlidedskyPipeline": 100
-}
+ITEM_PIPELINES = {"glidedsky.pipelines.GlidedskyPipeline": 100}
 
 LOG_LEVEL = "INFO"
